@@ -1,0 +1,19 @@
+body{
+    background-color: antiquewhite;
+}
+.registration-form{
+    width: 90%;
+    margin: auto !important;
+    /* background-color: antiquewhite; */
+}
+.title{
+   line-height: 1.5;
+   font-weight: 400;
+    text-align: center;
+    background-color:darkgrey;
+    /* width:100%; */
+}
+
+.submit-btn{
+    text-align: center;
+}
