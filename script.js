@@ -9,22 +9,28 @@ function validate() {
 
 	let error = false
 
-	if(firstNameInput.length>=3){
-		document.getElementById('first-name-valid').style.display = 'block'
-		document.getElementById('first-name-invalid').style.display = 'none'
-	} else {
+	if(firstNameInput.length<3 || (firstNameInput.includes(0)||firstNameInput.includes(1)||firstNameInput.includes(2)||firstNameInput.includes(3)||firstNameInput.includes(4)
+    || firstNameInput.includes(5)||firstNameInput.includes(6)||firstNameInput.includes(7)||firstNameInput.includes(8)||firstNameInput.includes(9)))
+    {
 		document.getElementById('first-name-invalid').style.display = 'block'
-		document.getElementById('first-name-valid').style.display = 'none'
-		error = true
+        document.getElementById('first-name-valid').style.display = 'none'
+        error = true;
+	} 
+    else {
+		document.getElementById('first-name-valid').style.display = 'block'
+        document.getElementById('first-name-invalid').style.display = 'none'
 	}
 
-	if(lastNameInput.length>=3){
-		document.getElementById('last-name-valid').style.display = 'block'
-		document.getElementById('last-name-invalid').style.display = 'none'
-	} else {
-		document.getElementById('last-name-invalid').style.display = 'block'
+	if(lastNameInput.length<3 || (lastNameInput.includes(0)||lastNameInput.includes(1)||lastNameInput.includes(2)||lastNameInput.includes(3)||lastNameInput.includes(4)
+    || lastNameInput.includes(5)||lastNameInput.includes(6)||lastNameInput.includes(7)||lastNameInput.includes(8)||lastNameInput.includes(9))){
 		document.getElementById('last-name-valid').style.display = 'none'
-		error = true
+		document.getElementById('last-name-invalid').style.display = 'block'
+        error = true;
+	} 
+
+    else {
+		document.getElementById('last-name-invalid').style.display = 'none'
+		document.getElementById('last-name-valid').style.display = 'block'
 	}
 
 	if (
@@ -42,10 +48,11 @@ function validate() {
 		error = true
   }
 
-	if(phnInput.includes(1,2,3,4,5,6,7,8,9,0) && phnInput.length === 10) {
+	if(phnInput.length === 10 && parseInt(phnInput)) {
 		document.getElementById("phn-valid").style.display = "block";
 		document.getElementById("phn-invalid").style.display = "none";
-	} else {
+	} 
+    else {
 		document.getElementById("phn-invalid").style.display = "block";
 		document.getElementById("phn-valid").style.display = "none";
 		error = true
